@@ -76,7 +76,17 @@ class EloadasTest {
         assertFalse(eloadas.foglalt(1,1));
         eloadas.lefoglal();
         assertTrue(eloadas.foglalt(1,1));
+        assertFalse(eloadas.foglalt(1,2));
+        assertFalse(eloadas.foglalt(2,1));
+        eloadas.lefoglal();
+        assertTrue(eloadas.foglalt(1,1));
+        assertFalse(eloadas.foglalt(1,2));
+        assertFalse(eloadas.foglalt(2,1));
+        for (int i = 0; i < 3; i++) {
+            eloadas.lefoglal();
+        }
+        assertTrue(eloadas.foglalt(1,1));
         assertTrue(eloadas.foglalt(1,2));
-        assertTrue(eloadas.foglalt(2,1));
+        assertFalse(eloadas.foglalt(2,1));
     }
 }
